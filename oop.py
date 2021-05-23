@@ -1,26 +1,16 @@
 import telebot
 from telebot import types
 
-oop_themes = [("Разложение на множители и приложения", "FindDividers"), ("Бинарный поиск", "BinSearch"), (" Алгоритм быстрого возведения числа в степень", "BinPow"),
-              ("Два указателя", "TwoPointers"), ("Сортировка подсчётом", "CountSort"), ("Сорировка Слиянием", )]
+oop_themes = [("Введение", "Introduction"), ("CE, RE, UB", "Behavior"), ("Основные типы", "Types")]
 
-oop_links = ["https://www.notion.so/Programming-Technologies-Seminar-Course-e3cebd23e48b4125972e2569664166b2", 
-             "https://www.notion.so/Programming-Technologies-Seminar-Course-e3cebd23e48b4125972e2569664166b2",
-             "https://www.notion.so/Programming-Technologies-Seminar-Course-e3cebd23e48b4125972e2569664166b2",
-             "https://www.notion.so/Programming-Technologies-Seminar-Course-e3cebd23e48b4125972e2569664166b2",
-             "https://www.notion.so/Programming-Technologies-Seminar-Course-e3cebd23e48b4125972e2569664166b2",
-             "https://www.notion.so/Programming-Technologies-Seminar-Course-e3cebd23e48b4125972e2569664166b2"]
+oop_links = ["https://www.notion.so/e0e0fb3a2b2a41cab75d8af5761631c4", 
+             "https://www.notion.so/CE-RE-UB-0d59d0beafc845c9968b660879d39c49",
+             "https://www.notion.so/d561b2826d3e41cb833336cbb28c8ed5"]
   
 def get_link_oop(theme):
-    if theme == "FindDividers":
+    if theme == "Introduction":
         return oop_links[0]
-    elif theme == "BinSearch":
+    elif theme == "Behavior":
         return oop_links[1]
-    elif theme == "BinPow":
+    elif theme == "Types":
         return oop_links[2]
-    elif theme == "TwoPointers":
-        return oop_links[3]
-    elif theme == "CountSort":
-        return oop_links[4]
-    elif theme == "MergeSort":
-        return oop_links[5]

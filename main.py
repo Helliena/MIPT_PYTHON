@@ -32,8 +32,7 @@ def callback_worker(call):
     else:
         theme = call.data
         bot.send_message(call.message.chat.id, text = "Ссылка на материалы: " + get_link(theme))
-
-        
+     
 
 
 def syllabus(tag):
