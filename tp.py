@@ -1,9 +1,16 @@
-import telebot
-from telebot import types
+import sqlite3
 
-tp_themes = [("Паттерны", "Patterns")]
+tp_themes = []
+tp_links = []
 
-tp_links = ["https://www.notion.so/8ff1a33000ad427da8214dc87f8723bf"]
+with sqlite3.connect('tp_database.sqlite') as db:
+    cursor = db.cursor()
+    query_data = """ SELECT theme, callback, link FROM themes """
+    cursor.execute(query_data)
+    for i in cursor:
+        tp_themes.append((i[0], i[1]))
+        tp_links.append(i[2])
+    db.commit()
   
 def get_link_tp(theme):
     if theme == "Patterns":

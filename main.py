@@ -34,7 +34,6 @@ def callback_worker(call):
         bot.send_message(call.message.chat.id, text = "Ссылка на материалы: " + get_link(theme))
      
 
-
 def syllabus(tag):
     tags = []
     if tag == "DSA":
@@ -52,6 +51,7 @@ def get_link(theme):
         return get_link_oop(theme)
     elif get_link_tp(theme) != None:
         return get_link_tp(theme)
+    return str(None)
 
 
 bot.polling(none_stop=True, interval=0)   

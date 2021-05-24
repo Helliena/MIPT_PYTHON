@@ -1,17 +1,18 @@
-import telebot
-from telebot import types
+import sqlite3
+
+dsa_themes = []
+dsa_links = []
+
+with sqlite3.connect('dsa_database.sqlite') as db:
+    cursor = db.cursor()
+    query_data = """ SELECT theme, callback, link FROM themes """
+    cursor.execute(query_data)
+    for i in cursor:
+        dsa_themes.append((i[0], i[1]))
+        dsa_links.append(i[2])
+    db.commit()
 
 
-dsa_themes = [("Разложение на множители и приложения", "FindDividers"), ("Бинарный поиск", "BinSearch"), ("Алгоритм быстрого возведения числа в степень", "BinPow"),
-                  ("Два указателя", "TwoPointers"), ("Сортировка подсчётом", "CountSort"), ("Сорировка Слиянием", "MergeSort")]
-
-dsa_links = ["https://www.notion.so/12570eb7adbc44249f21ea4309a1327b", 
-             "https://www.notion.so/24d8a01af8b6493aad5a25798145e0bc",
-             "https://www.notion.so/e96201bfc3e341798122bfcb4fe088ef",
-             "https://www.notion.so/32e8f653822a4d589dbbd0fcfccc40fb",
-             "https://www.notion.so/46d3e2e410b44b998ecd69d4c42b2107",
-             "https://www.notion.so/1aca050c2e0044f1bf4b269ecbd2b2de"]
-  
 def get_link_dsa(theme):
     if theme == "FindDividers":
         return dsa_links[0]
