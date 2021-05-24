@@ -3,7 +3,7 @@ import sqlite3
 tp_themes = []
 tp_links = []
 
-with sqlite3.connect('tp_database.sqlite') as db:
+with sqlite3.connect('data/tp_database.sqlite') as db:
     cursor = db.cursor()
     query_data = """ SELECT theme, callback, link FROM themes """
     cursor.execute(query_data)

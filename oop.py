@@ -3,7 +3,7 @@ import sqlite3
 oop_themes = []
 oop_links = []
 
-with sqlite3.connect('oop_database.sqlite') as db:
+with sqlite3.connect('data/oop_database.sqlite') as db:
     cursor = db.cursor()
     query_data = """ SELECT theme, callback, link FROM themes """
     cursor.execute(query_data)

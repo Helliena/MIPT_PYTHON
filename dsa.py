@@ -3,7 +3,7 @@ import sqlite3
 dsa_themes = []
 dsa_links = []
 
-with sqlite3.connect('dsa_database.sqlite') as db:
+with sqlite3.connect('data/dsa_database.sqlite') as db:
     cursor = db.cursor()
     query_data = """ SELECT theme, callback, link FROM themes """
     cursor.execute(query_data)
